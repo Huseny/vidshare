@@ -50,6 +50,9 @@ dependencies:
   video_player: ^2.8.1
   permission_handler: ^11.1.0
   flutter_svg: ^2.0.9
+  geocoding: ^2.1.1
+  camera: ^0.10.5+7
+  geolocator: ^10.1.0
 
 dev_dependencies:
   flutter_test:

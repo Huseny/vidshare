@@ -5,5 +5,6 @@ class RouteConstants {
   static const String LOGIN = '/login';
   static const String VERIFYOTP = '/verifyOtp';
   static const String VIDEODETAILS = '/videodetails';
-  static const String RECORDVIDEO = '/recordvideo'; 
+  static const String RECORDVIDEO = '/recordvideo';
+  static const String POSTVIDEO = '/postvideo';
 }

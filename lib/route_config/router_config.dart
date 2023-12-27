@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vid_share/presentation/screens/homepage.dart';
 import 'package:vid_share/presentation/screens/login_page.dart';
+import 'package:vid_share/presentation/screens/post_video.dart';
 import 'package:vid_share/presentation/screens/record_video.dart';
 import 'package:vid_share/presentation/screens/verify_otp.dart';
 import 'package:vid_share/presentation/screens/video_detailed_view.dart';
@@ -13,15 +14,14 @@ class AppRouterConfig {
       routes: [
         GoRoute(
           path: '/',
-          pageBuilder: (context, state) => MaterialPage(
-              child:
-                  // isLoggedIn ? HomePage() : const LoginPage()
-                  HomePage()),
+          pageBuilder: (context, state) =>
+              MaterialPage(child: isLoggedIn ? const HomePage() : const LoginPage()),
         ),
         GoRoute(
           path: '/home',
           name: RouteConstants.HOME,
-          pageBuilder: (context, state) => MaterialPage(child: HomePage()),
+          pageBuilder: (context, state) =>
+              const MaterialPage(child: HomePage()),
         ),
         GoRoute(
           path: "/login",
@@ -55,6 +55,15 @@ class AppRouterConfig {
             child: RecordVideo(),
           ),
         ),
+        GoRoute(
+            path: "/postvideo/:path/:location",
+            name: RouteConstants.POSTVIDEO,
+            pageBuilder: (context, state) => MaterialPage(
+                  child: PostVideo(
+                    path: state.pathParameters["path"]!,
+                    location: state.pathParameters["location"]!,
+                  ),
+                )),
       ],
     );
     return routes;

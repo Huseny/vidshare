@@ -19,7 +19,10 @@ class VideoView extends StatelessWidget {
               pathParameters: {'id': post.id});
         },
         child: Column(children: [
-          Image.network(post.videoUrl),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Image.network(post.videoUrl),
+          ),
           const SizedBox(
             height: 7,
           ),

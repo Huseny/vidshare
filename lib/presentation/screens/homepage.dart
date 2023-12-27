@@ -1,51 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:vid_share/presentation/components/custom_bottom_sheet.dart';
+import 'package:vid_share/presentation/components/custom_topbar.dart';
 import 'package:vid_share/presentation/components/home_body.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
-
-  final TextEditingController searchTextController = TextEditingController();
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            bottomSheet: const CustomBottomSheet(),
             backgroundColor: const Color.fromRGBO(246, 237, 245, 1),
             body: Column(children: [
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                decoration: const BoxDecoration(
-                    color: Color.fromRGBO(217, 217, 217, 1)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        SvgPicture.asset(
-                          "assets/camera_logo.svg",
-                          semanticsLabel: "VidShare Logo",
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        const Text(
-                          "VidShare",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white),
-                      child: SvgPicture.asset("assets/bell.svg"),
-                    )
-                  ],
-                ),
-              ),
+              const CustomTopBar(),
               const SizedBox(
                 height: 15,
               ),
