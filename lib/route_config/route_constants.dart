@@ -4,4 +4,6 @@ class RouteConstants {
   static const String HOME = '/';
   static const String LOGIN = '/login';
   static const String VERIFYOTP = '/verifyOtp';
+  static const String VIDEODETAILS = '/videodetails';
+  static const String RECORDVIDEO = '/recordvideo'; 
 }

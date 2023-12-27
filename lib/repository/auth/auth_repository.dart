@@ -7,7 +7,7 @@ class AuthRepository {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   Future<User?> signinWithPhoneNumber(
       String phoneNumber, BuildContext context) async {
-        User? user;
+    User? user;
     try {
       _firebaseAuth.verifyPhoneNumber(
         phoneNumber: phoneNumber,

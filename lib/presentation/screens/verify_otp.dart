@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pinput/pinput.dart';
+import 'package:vid_share/route_config/route_constants.dart';
 
 class VerifyOtp extends StatefulWidget {
   const VerifyOtp({Key? key, required this.verificationId}) : super(key: key);
@@ -90,7 +91,10 @@ class _VerifyOtpState extends State<VerifyOtp> {
                           backgroundColor: Colors.blue,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10))),
-                      onPressed: () {},
+                      onPressed: () {
+                        GoRouter.of(context)
+                            .pushReplacementNamed(RouteConstants.HOME);
+                      },
                       child: const Text(
                         "Get Started",
                         style: TextStyle(
@@ -110,11 +114,13 @@ class _VerifyOtpState extends State<VerifyOtp> {
                       GoRouter.of(context).pop();
                     },
                     style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                          backgroundColor: Colors.blue
-                    ),
-                    child: const Text("Back", style: TextStyle(color: Colors.white),)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        backgroundColor: Colors.blue),
+                    child: const Text(
+                      "Back",
+                      style: TextStyle(color: Colors.white),
+                    )),
               )
             ],
           ),
